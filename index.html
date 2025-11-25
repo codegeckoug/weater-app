@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Weather Icons CSS -->
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="app-header">
+        <div class="header-wrapper">
+          <div class="header-bg">
+            <img src="images/logo.svg" alt="Weather App Logo" class="logo" />
+          </div>
+          <div class="units-dropdown">
+            <button class="units-btn">
+              <img
+                src="images/icon-units.svg"
+                alt="Units Icon"
+                width="10px"
+                height="10px"
+              />
+
+              Units
+              <span><img src="images/icon-dropdown.svg" /></span>
+            </button>
+            <div class="units-menu">
+              <p><strong>Switch to Imperial</strong></p>
+              <hr />
+              <p>Temperature</p>
+              <button data-unit="celsius">Celsius (°C)</button>
+              <button data-unit="fahrenheit">Fahrenheit (°F)</button>
+              <hr />
+              <p>Wind Speed</p>
+              <button data-unit="kmh">km/h</button>
+              <button data-unit="mph">mph</button>
+              <hr />
+              <p>Precipitation</p>
+              <button data-unit="mm">Millimeters (mm)</button>
+              <button data-unit="inches">Inches (in)</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="search-section">
+        <h2 class="search-title">How’s the sky looking today?</h2>
+        <div class="search-bar">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search for a place..."
+            class="search-input"
+          />
+          <button id="search-btn" class="search-btn">Search</button>
+        </div>
+      </section>
+
+      <div class="main-content">
+        <section class="current-weather">
+          <div class="weather">
+            <div class="current-wrapper">
+              <div class="weather-card">
+                <div class="location-info">
+                  <h2 class="city" id="curent-temp"></h2>
+                  <p class="date" id="date"></p>
+                  <p class="time" id="time"></p>
+                </div>
+                <div class="temperature">
+                  <img
+                    class="weather-icon"
+                    src="images/icon-sunny.webp"
+                    width="150px"
+                    height="150px"
+                    alt="Weather Icon"
+                  />
+                  <span class="temp-value" id="temp"></span>
+                </div>
+              </div>
+
+              <div class="extra-metrics" id="extra-metric">
+                <div class="metric">
+                  <span>18°</span>
+                  <p>Feels Like</p>
+                </div>
+                <div class="metric">
+                  <span>46%</span>
+                  <p>Humidity</p>
+                </div>
+                <div class="metric">
+                  <span>14 km/h</span>
+                  <p>Wind</p>
+                </div>
+                <div class="metric">
+                  <span>0 mm</span>
+                  <p>Precipitation</p>
+                </div>
+              </div>
+              <div class="daily-forecast" id="weather-forecast">
+                <p class="daily-name">Daily forecast</p>
+                <div class="daily-cards">
+                  <div class="day-card">
+                    <p>Tue</p>
+                    <img src="images/rain.png" alt="Rainy" />
+                    <p class="temp">Night - 20°</p>
+                    <p class="temp">Day - 14°</p>
+                  </div>
+
+                  <div class="day-card">
+                    <p>Wed</p>
+                    <img src="images/cloud.png" alt="Cloudy" />
+                    <span>21° | 15°</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="hourly-forecast" id class="hourly-forecast">
+          <div class="forecast-head">
+            <div class="forecast-header">
+              <p>Hourly forecast</p>
+            </div>
+            <div class="day-selector-container">
+              <div class="select-wrapper">
+                <select id="day-selector">
+                  <!--
+                  <option>Monday</option>
+                  <option>Tuesday</option>
+                  <option>Wednesday</option>
+                  <option>Thursday</option>
+                  <option>Friday</option>
+                  <option>Saturday</option>
+                  <option>Sunday</option>
+                  -->
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="hourly-cards">
+            <div class="hour-cards">
+              <div class="hour-card">
+                <img
+                  src="images/icon-drizzle.webp"
+                  alt="Cloudy"
+                  class="hour-icon"
+                />
+                <span>3 PM</span>
+              </div>
+              <div class="hour-temp">
+                <p>20°</p>
+              </div>
+            </div>
+            <div class="hour-cards">
+              <div class="hour-card">
+                <img
+                  src="images/icon-drizzle.webp"
+                  alt="Cloudy"
+                  class="hour-icon"
+                />
+                <span>4 PM</span>
+              </div>
+              <div class="hour-temp">
+                <span>20°</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
